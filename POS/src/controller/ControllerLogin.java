@@ -2,6 +2,7 @@ package controller;
 /*
 Controlador de los botones de login
 */
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,7 +22,7 @@ public class ControllerLogin implements ActionListener{
     private final JPasswordField contrasena, nuevaContrasena, confirmaContrasena;
     private final JFrame ventana;
     private final JPanel panel;
-    private Statement conector;
+    private final Statement conector;
     private ResultSet resultado;
     private String user, pass, consulta, tipo, nombre, ex;
 
@@ -78,6 +79,7 @@ public class ControllerLogin implements ActionListener{
         } catch (SQLException exe) {}        
     }
     /////////////REVISAR SI LAS 2 CONSULTAS SE PUEDEN MANDAR A MODELO///////////
+    
     private void sesion(){
         consulta();
         if(!usuario.getText().equals(user) || !contrasena.getText().equals(pass)){
@@ -90,7 +92,7 @@ public class ControllerLogin implements ActionListener{
             else {
                 ventana.dispose();
                 JOptionPane.showMessageDialog(null, "Inicio de Sesion Exitoso",
-                                              "POS Developers", 1, null);
+                                              "POS Developers", -1, null);
                 new Inicio(nombre, tipo, conector).principal();//REVISAR LA CONEXION CON LAS OTRAS INTERFACES
             }
     }
@@ -104,11 +106,11 @@ public class ControllerLogin implements ActionListener{
         else if(!confirmaContrasena.getText().equals(nuevaContrasena.getText()))
                 JOptionPane.showMessageDialog(null, 
                                               "La contraseña nueva no coincide",
-                                              "POS Developers", 0, null);
+                                              "POS Developers", 2, null);
             else {
                   consultaActualiza();
                   JOptionPane.showMessageDialog(null, "Actualizacion exitosa",
-                                                  "POS Developers", 1, null);
+                                                  "POS Developers", -1, null);
                   cancelar();
             }
         }
@@ -124,7 +126,7 @@ public class ControllerLogin implements ActionListener{
     }
         
     @Override
-    public void actionPerformed(java.awt.event.ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {
         ex = e.getActionCommand();
         if(ex.equals("Entrar")) sesion();
         else if(ex.equals("Cambiar Contraseña"))cambio();

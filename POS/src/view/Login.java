@@ -75,9 +75,9 @@ public class Login {
         contrasenaImg.setIcon(resizeImage("src/images/pass.png", 70,70));
         contrasenaImg.setBounds(35, 300, 70, 70);
         usuario.setBounds(120,200,100,100 );
-        usuario.setFont(new Font("CooperBlack", BOLD, 15));
+        usuario.setFont(new Font("Microsoft YaHei", BOLD, 15));
         contrasena.setBounds(120,290,130,100 );
-        contrasena.setFont(new Font("CooperBlack", BOLD, 15));
+        contrasena.setFont(new Font("Microsoft YaHei", BOLD, 15));
     }
     
     private ImageIcon resizeImage(String filePath, int x, int y){

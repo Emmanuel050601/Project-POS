@@ -17,6 +17,7 @@ import model.Reloj;
 /*
 HACER LAS CONEXIONES NECESARIAS
 */
+
 public class Inicio{
     private final JFrame ventana;
     private final JPanel panel;
@@ -36,7 +37,7 @@ public class Inicio{
         bienvenido = new JLabel("BIENVENIDO: " + nombre);
         rol = new JLabel("ROL: " + tipo);
         image = Toolkit.getDefaultToolkit().getImage("src/Images/logo.png");
-        barra = new Menu(tipo, conector, ventana).menu();
+        barra = new Menu(tipo, conector, ventana, panel).menu();
         h1 = new Thread(new Reloj(tiempo, fecha));
         h1.start();
     }
@@ -69,7 +70,7 @@ public class Inicio{
         rol.setBounds(275, 440, 260, 30 );
         rol.setFont(new Font("Microsoft YaHei", BOLD, 20));
     }
-    
+        
     private ImageIcon resizeImage(String filePath, int x, int y){
         return new ImageIcon(new ImageIcon(filePath).getImage()
                            .getScaledInstance(x,y, Image.SCALE_SMOOTH));

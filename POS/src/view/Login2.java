@@ -55,13 +55,13 @@ public class Login2 {
     
     private void configuraEtiquetas(){
         usuario.setBounds(120, 40,100,40 );
-        usuario.setFont(new Font("CooperBlack", BOLD, 15));
+        usuario.setFont(new Font("Microsoft YaHei", BOLD, 15));
         contrasena.setBounds(120,130,200,40 );
-        contrasena.setFont(new Font("CooperBlack", BOLD, 15));
+        contrasena.setFont(new Font("Microsoft YaHei", BOLD, 15));
         nuevaContrasena.setBounds(120, 210, 200, 40);
-        nuevaContrasena.setFont(new Font("CooperBlack", BOLD, 15));
+        nuevaContrasena.setFont(new Font("Microsoft YaHei", BOLD, 15));
         confirmaContrasena.setBounds(120, 290, 200, 40);
-        nuevaContrasena.setFont(new Font("CooperBlack", BOLD, 15));
+        nuevaContrasena.setFont(new Font("Microsoft YaHei", BOLD, 15));
     }
     
     private void configuraTexto(){

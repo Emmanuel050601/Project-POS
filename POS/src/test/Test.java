@@ -1,5 +1,7 @@
 package test;
 
+
+import view.CProducto;
 import view.SplashScreen;
 
 //AGREGAR FUNCION A LAS OPCIONES DEL MENU
@@ -8,6 +10,7 @@ import view.SplashScreen;
 public class Test {
     public static void main(String[] args) {
         new SplashScreen().run();
+        //new CProducto().run();
     }
 }
         

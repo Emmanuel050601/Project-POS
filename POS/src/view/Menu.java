@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 
 public class Menu {
     private final JMenuBar barra; 
@@ -17,7 +18,7 @@ public class Menu {
     private final String rol;
     private final ControllerMenu controllerMenu;
     
-    public Menu(String rol, Statement conector, JFrame ventana){
+    public Menu(String rol, Statement conector, JFrame ventana, JPanel panel){
         barra = new JMenuBar();
         menu = new JMenu("Menu");
         opciones = new JMenu("Opciones");
@@ -32,17 +33,22 @@ public class Menu {
         ayuda = new JMenuItem("Ayuda");
         cerrarS = new JMenuItem("Cerrar Sesion");
         salir = new JMenuItem("Salir");
-        controllerMenu = new ControllerMenu(conector, ventana);
+        controllerMenu = new ControllerMenu(conector, ventana, barra, panel);
         this.rol = rol;
     }
     
     private void configuraOpciones(){
         salir.addActionListener(controllerMenu);
         cerrarS.addActionListener(controllerMenu);
-        
+        ayuda.addActionListener(controllerMenu);
+    }
+    
+    private void configuraMenu(){
+        productos.addActionListener(controllerMenu);
     }
     
     private void agregarMenu(){
+        configuraMenu();
         menu.add(rVenta);
         menu.add(ventaD);
         menu.add(devoluciones);
